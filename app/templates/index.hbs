@@ -1,0 +1,8 @@
+<h1>Github Viewer</h1>
+<hr/>
+<p>This is the Github explorer for all of our favorite developers</p>
+<ul>
+  {{#each}}
+  <li>{{#link-to 'user' login}}{{name}}{{/link-to}}</li>
+  {{/each}}
+</ul>

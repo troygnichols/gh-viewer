@@ -1,0 +1,34 @@
+<ol class="breadcrumb">
+  <li>{{#link-to 'index'}}Devs{{/link-to}}</li>
+  <li>{{#link-to 'user' user}}{{user.name}}{{/link-to}}</li>
+  <li>{{#link-to 'repositories' user}}Repositories{{/link-to}}</li>
+  <li>{{name}}</li>
+</ol>
+
+<h3>{{name}}</h3>
+
+<p>
+  {{#if description}}
+    {{description}}
+  {{else}}
+    No description
+  {{/if}}
+</p>
+
+<ul>
+  <li>Language: {{language}}</li>
+  <li>Watchers: {{watchers_count}}</li>
+  <li>Open Issues: {{open_issues_count}}</li>
+  <li>Clone: <strong>{{clone_url}}</strong></li>
+  <li>Page: <a {{bind-attr href=html_url}} target="_blank">{{html_url}}</a></li>
+</ul>
+
+<hr>
+
+<ul class="list-inline">
+  <li>{{#link-to 'issues'}}Issues{{/link-to}}</li>
+  <li>{{#link-to 'forks'}}Forks{{/link-to}}</li>
+  <li>{{#link-to 'commits'}}Commits{{/link-to}}</li>
+</ul>
+
+{{outlet}}
