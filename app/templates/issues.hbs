@@ -1,1 +1,17 @@
-Issues
+<h4>Issues</h4>
+<table class="table table-striped">
+  <tbody>
+  {{#each}}
+  <tr>
+    <td><img {{bind-attr src=user.avatar_url}} style="width: 35px;"/></td>
+    <td>{{title}}</td>
+    <td class="text-muted">{{from-date created_at}}</td>
+  </tr>
+  {{else}}
+  <tr>
+    <td colspan="3">No issues</td>
+  </tr>
+
+  {{/each}}
+  </tbody>
+</table>

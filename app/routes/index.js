@@ -6,7 +6,8 @@ var IndexRoute = Ember.Route.extend({
       { name: 'Rob Conery',   login: 'robconery' },
       { name: 'Troy Nichols', login: 'troygnichols' },
       { name: 'Ryan Thames',  login: 'ryanthames' },
-      { name: 'Tom Dale',     login: 'tomdale' }
+      { name: 'Tom Dale',     login: 'tomdale' },
+      { name: 'OC Software',  login: 'ocsoftware' }
     ];
   }
 });

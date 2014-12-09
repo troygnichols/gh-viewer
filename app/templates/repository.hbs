@@ -15,13 +15,42 @@
   {{/if}}
 </p>
 
-<ul>
-  <li>Language: {{language}}</li>
-  <li>Watchers: {{watchers_count}}</li>
-  <li>Open Issues: {{open_issues_count}}</li>
-  <li>Clone: <strong>{{clone_url}}</strong></li>
-  <li>Page: <a {{bind-attr href=html_url}} target="_blank">{{html_url}}</a></li>
-</ul>
+<table class="repo-details">
+  <tbody>
+    <tr>
+      <td>Language:</td>
+      <td>{{language}}</td>
+    </tr>
+    <tr>
+      <td>Open Issues:</td>
+      <td>{{#link-to 'issues'}}{{open_issues_count}}{{/link-to}}</td>
+    </tr>
+    <tr>
+      <td>Watchers:</td>
+      <td>{{watchers_count}}</td>
+    </tr>
+    <tr>
+      <td>Forks:</td>
+      <td>{{#link-to 'forks'}}{{forks_count}}{{/link-to}}</td>
+    </tr>
+    <tr>
+      <td>Clone:</td>
+      <td><strong>{{clone_url}}</strong></td>
+    </tr>
+    <tr>
+      <td>Page:</td>
+      <td><a {{bind-attr href=html_url}} target="_blank">{{html_url}}</a></td>
+    </tr>
+  </tbody>
+</table>
+
+{{#if fork}}
+<small class="text-muted">
+  Forked from
+  {{#link-to 'repository' parent.owner.login parent.name}}{{parent.full_name}}{{/link-to}}
+  {{from-date created_at}}
+</small>
+{{/if}}
 
 <hr>
 

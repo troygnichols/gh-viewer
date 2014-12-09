@@ -1,1 +1,17 @@
-Forks
+<h4>Forks</h4>
+<table class="table table-stiped">
+  <tbody>
+  {{#each}}
+  <tr>
+    <td><img {{bind-attr src=owner.avatar_url}} style="width: 35px;"/></td>
+    <td>{{full_name}}</td>
+    <td class="text-muted">{{from-date created_at}}</td>
+  </tr>
+  {{else}}
+  <tr>
+    <td colspan="3">No forks</td>
+  </tr>
+
+  {{/each}}
+  </tbody>
+</table>

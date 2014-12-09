@@ -1,1 +1,18 @@
-Commits
+<h4>Commits</h4>
+<table class="table table-stiped">
+  <tbody>
+  {{#each}}
+  <tr>
+    <td><img {{bind-attr src=author.avatar_url}} style="width: 35px;"/></td>
+    <td><small><strong>{{cut-tail sha max=7}}</strong></small></td>
+    <td><small>{{commit.message}}</small></td>
+    <td class="text-muted"><small>{{from-date created_at}}</small></td>
+  </tr>
+  {{else}}
+  <tr>
+    <td colspan="4">No commits</td>
+  </tr>
+
+  {{/each}}
+  </tbody>
+</table>
